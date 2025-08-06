@@ -36,5 +36,15 @@ public class StudentController {
         return new ResponseEntity<>("Success", HttpStatus.OK);
     }
 
+    @PostMapping("/login")
+    public ResponseEntity<String> login(@RequestBody Students students){
+        String ans = studentsService.verify(students);
+        if (ans.equals("Invalid username or password")) {
+            return new ResponseEntity<>("Fail", HttpStatus.NOT_FOUND);
+        }
+        return new ResponseEntity<>(ans, HttpStatus.OK);
+
+    }
+
 
 }
