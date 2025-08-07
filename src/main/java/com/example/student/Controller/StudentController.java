@@ -43,7 +43,6 @@ public class StudentController {
             return new ResponseEntity<>("Fail", HttpStatus.NOT_FOUND);
         }
         return new ResponseEntity<>(ans, HttpStatus.OK);
-
     }
 
 
